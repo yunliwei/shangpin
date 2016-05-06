@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caipingcla_id: 1
+  name: MyString
+  summary: MyString
+  price: 1.5
+
+two:
+  caipingcla_id: 1
+  name: MyString
+  summary: MyString
+  price: 1.5

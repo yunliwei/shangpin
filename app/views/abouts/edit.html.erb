@@ -1,0 +1,22 @@
+
+
+  <%= form_for @about do |f| %>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">关于尚品：</label>
+        <div>
+          <%= f.kindeditor :content, simple_mode:true, owner:@about %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label"></label>
+
+
+        <%= f.submit '确定',class:"button button-glow button-rounded button-raised button-primary pull-right" %>
+
+      </div>
+
+
+
+  <% end %>
