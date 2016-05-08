@@ -1,0 +1,38 @@
+<h1>菜品类型</h1>
+<div id="main">
+  <div class="breadcrumb-wrapper">
+    <div class="container">
+      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 row ">
+        <h1 class="title">菜品类型</h1>
+        <br>
+        <br>
+        <table class="table table-striped table-bordered">
+          <thead>
+          <tr>
+            <th>类型ID</th>
+            <th>菜品类型</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @caipincla.each do |f| %>
+              <tr>
+                <td style="text-align:center">
+                  <%= f.id %>
+                </td>
+                <td style="text-align:center">
+                  <%= f.name %>
+                </td>
+                <td>
+                  <%= link_to '删除', f, class: "fa fa-trash", method: :delete, data: { confirm: '确实要删除记录吗?' } %>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= link_to "添加类型", new_caipincla_path,class: "button button-glow button-rounded button-raised button-primary pull-right external item-link item-content alert-text",'data-no-turbolink'=>true %>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+

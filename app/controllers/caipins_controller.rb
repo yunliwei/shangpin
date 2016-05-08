@@ -1,0 +1,2 @@
+class CaipinsController < ApplicationController
+end

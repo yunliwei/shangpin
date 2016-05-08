@@ -1,0 +1,2 @@
+module CaipinclasHelper
+end

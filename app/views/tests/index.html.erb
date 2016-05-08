@@ -45,7 +45,7 @@
               <div class="swiper-slide">
                 <span>CALL <br /> US NOW</span>
                 <span class="subtitle">get in touch</span>
-                <a href="/abouts" class="swiper_read_more external item-link item-content alert-text">click to call now!</a>
+                <a href="/abouts" class="swiper_read_more external item-link item-content alert-text">关于我们</a>
               </div>
 
             </div>
@@ -59,8 +59,22 @@
     <div class="toolbar">
       <div class="toolbar-inner">
         <ul class="toolbar_icons icons_4row">
-          <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title="" /></a></li>
-          <li><a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/lock.png" alt="" title="" /></a></li>
+          <li>
+
+            <%= link_to image_tag('icons/white/user.png'),introductions_path, class:"external item-link item-content alert-text" %>
+          </li>
+
+
+
+          <li>
+            <%= link_to image_tag('icons/white/lock.png'),caipins_path, class:"external item-link item-content alert-text" %>
+
+          </li>
+
+
+
+
+
           <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title="" /></a></li>
           <li><a href="contact.html"><img src="images/icons/white/envelope.png" alt="" title="" class="external item-link item-content alert-text" /></a></li>
         </ul>

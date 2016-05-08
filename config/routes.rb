@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   resources :tests
   resources :abouts
   resources :adminabouts
+  resources :introductions
+  resources :caipinclas
+  resources :caipins
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
