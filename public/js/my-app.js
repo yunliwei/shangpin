@@ -1,5 +1,3 @@
-
-$(document).ready(function(){
 // Initialize your app
 var myApp = new Framework7({
     animateNavBackIcon: true,
@@ -152,4 +150,3 @@ $$(document).on('pageInit', function (e) {
 		
 		
 })
-});

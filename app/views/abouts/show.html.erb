@@ -1,5 +1,23 @@
-<% if @about %>
+<div class="pages">
+  <div data-page="projects" class="page no-toolbar no-navbar">
+    <div class="page-content">
 
-    <%= @about.content.html_safe %>
+      <div class="navbarpages">
+        <div class="navbar_home_link"><a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a></div>
+        <div class="navbar_page_center">About</div>
+        <div class="menu_open_icon_white"><a href="/tests" class="external item-link item-content alert-text"><%=image_tag('menu_open.png') %></a></div>
+      </div>
+      <div id="pages_maincontent">
 
-<% end %>
+        <% if @about %>
+
+            <%= @about.content.html_safe %>
+
+        <% end %>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

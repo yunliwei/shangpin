@@ -1,17 +1,23 @@
-
-
-
-
-
-
-
-
 <div class="statusbar-overlay"></div>
 
 <div class="panel-overlay"></div>
 
-
-
+<div class="panel panel-left panel-cover">
+  <div class="user_login_info">
+    <div class="user_thumb"><img src="images/photos/photo8.jpg" alt="" title="" /></div>
+    <h2>Hi, username</h2>
+    <p>Edit your account settings</p>
+    <nav class="list-nav-small">
+      <ul>
+        <li class="about-icon-small"><a href="about.html" class="close-panel">Profile</a></li>
+        <li class="tools-icon-small"><a href="features.html" class="close-panel">Settings</a></li>
+        <li class="lock-icon-small"><a href="features.html" class="close-panel">Account</a></li>
+        <li class="envelope-icon-small"><a href="features.html" class="close-panel">Messages</a></li>
+        <li class="logout-icon-small"><a href="index.html" class="close-panel">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 
 <div class="views">
@@ -20,8 +26,7 @@
 
     <div class="navbar">
       <div class="navbar-inner">
-        <div class="left sliding"><div class="logo_title">尚品</div></div>
-
+        <div class="center sliding"><div class="logo_title">尚品</div></div>
       </div>
     </div>
 
@@ -31,37 +36,33 @@
         <div class="page-content">
 
           <!-- Slider -->
-          <div class="swiper-container swiper-init" data-effect="coverflow" data-pagination=".swiper-pagination">
+          <div class="swiper-container swiper-init" data-effect="slide" data-pagination=".swiper-pagination">
             <div class="swiper-wrapper">
 
+
+
+
               <div class="swiper-slide">
-                <span>尚 <br /> 品质享受</span>
-                <span class="subtitle">尚品休闲娱乐餐吧</span>
-
-                <%= link_to '关于我们',abouts_path, class: 'swiper_read_more' %>
+                <span>CALL <br /> US NOW</span>
+                <span class="subtitle">get in touch</span>
+                <a href="/abouts" class="swiper_read_more external item-link item-content alert-text">click to call now!</a>
               </div>
-
-
-
-
 
             </div>
             <div class="swiper-pagination"></div>
           </div>
+
         </div>
       </div>
     </div>
-    <!-- Bottom Toolbar-->
+
     <div class="toolbar">
       <div class="toolbar-inner">
         <ul class="toolbar_icons icons_4row">
-          <li><a href="features.html" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title="" /></a></li>
-
-
-
-          <li><a href="abouts"><img src="images/icons/white/settings.png" alt="" title="" /></a></li>
-          <li><a href="photos.html"><img src="images/icons/white/photos.png" alt="" title="" /></a></li>
+          <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title="" /></a></li>
+          <li><a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/lock.png" alt="" title="" /></a></li>
           <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title="" /></a></li>
+          <li><a href="contact.html"><img src="images/icons/white/envelope.png" alt="" title="" class="external item-link item-content alert-text" /></a></li>
         </ul>
       </div>
     </div>
@@ -69,6 +70,12 @@
 
   </div>
 </div>
+
+
+<div class="popup popup-about">
+  <% render 'abouts/localshow' %>
+</div>
+
 
 <!-- About Popup -->
 <div class="popup popup-login">
@@ -102,10 +109,3 @@
     <div class="close_popup_button"><a href="#" class="close-popup">Close</a></div>
   </div>
 </div>
-
-
-
-
-
-
-
