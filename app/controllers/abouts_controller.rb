@@ -16,6 +16,40 @@ class AboutsController < ApplicationController
 
   end
 
+  def show
+
+  end
+
+  def edit
+
+  end
+
+  def create
+    @about = About.new(about_params)
+
+    respond_to do |format|
+      if @about.save
+        format.html { redirect_to edit_about_path @about, notice: 'Test was successfully created.' }
+        format.json { render :show, status: :created, location: @test }
+      else
+        format.html { render :new }
+        format.json { render json: @test.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @about.update(about_params)
+        format.html { redirect_to edit_about_path(@about), notice: 'Test was successfully updated.' }
+        format.json { render :show, status: :ok, location: @test }
+      else
+        format.html { render :edit }
+        format.json { render json: @test.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
 
 
