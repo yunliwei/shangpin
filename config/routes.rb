@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :introductions
   resources :caipinclas
   resources :caipins
+  resources :admincaipins
 
 
 

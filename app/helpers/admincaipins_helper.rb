@@ -1,0 +1,2 @@
+module AdmincaipinsHelper
+end
