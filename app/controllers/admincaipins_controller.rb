@@ -22,8 +22,7 @@ class AdmincaipinsController < ApplicationController
 
   # GET /tests/1/edit
   def edit
-
-
+    @caipintype = Caipincla.all
   end
 
 
