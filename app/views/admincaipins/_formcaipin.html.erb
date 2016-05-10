@@ -1,0 +1,72 @@
+<div class="container">
+  <h1>特色菜品</h1>
+</div>
+<script type="text/javascript" language="JavaScript">
+
+    function get_caipin(){
+        document.getElementById("hidden_caipin").value=document.getElementById("select_caipin").value;
+    }
+
+    $(document).ready(function () {
+
+
+        var a = document.getElementById("select_caipin");
+        a.options[0].selected = true;
+        document.getElementById("hidden_caipin").value=document.getElementById("select_caipin").value;
+
+
+
+    });
+
+
+
+</script>
+<%= form_for(@admincaipin, :html => {:class=>'form-horizontal m-t',id:"signupForm",:multipart => true}) do |f| %>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">菜品类型：</label>
+      <div class="col-sm-5">
+        <%= f.number_field :caipincla_id , class:"form-control",id:"hidden_caipin" %>
+        <select class="form-control m-b" id="select_caipin" name="account" onchange="get_caipin()">
+          <% @caipintype.each  do |f| %>
+              <option value=<%= f.id %> ><%=f.name %></option>
+              <% f.name %>
+          <% end %>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">菜品名称：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :name ,class:"form-control"%>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">菜品描述：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :summary ,class:"form-control"%>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">菜品价格：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :price ,id:"price",class:"form-control"%>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">选择图片：</label>
+      <div class="col-sm-3">
+        <%= f.file_field :image ,class:"form-control"%>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-3">
+        <%= f.submit '提交',class:"button button-glow button-rounded button-raised button-primary pull-right" %>
+      </div>
+    </div>
+    </div>
+<% end %>

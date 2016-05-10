@@ -4,22 +4,40 @@
 
     <div class="ibox-content">
 
-      <table class="table table-hover table-bordered">
+      <table border="1">
         <thead>
         <tr>
-          <th style="text-align:center">菜品类型</th>
+          <th style="text-align:center">菜品类型</th>&nbsp;
           <th style="text-align:center">菜品名称</th>
           <th style="text-align:center">菜品描述</th>
           <th style="text-align:center">菜品价格</th>
+          <th style="text-align:center">显示主页</th>
+          <th style="text-align:center">创建时间</th>
+          <th style="text-align:center">操作</th>
+
+
+
+
+
 
         </tr>
         </thead>
         <tbody>
-        <% @caipin.each do |f| %>
+        <% @caipins.each do |f| %>
             <tr>
+
+
+
               <td>
-                <%@section=Caipincla.find(f.caipincla_id)%><%=@section.name%> <%= f.caipincla_id %>
+                <% @caipinclas.each do |caipincla| %>
+                    <% if caipincla.id  == f.caipincla_id %>
+                        <%= caipincla.name %>
+                        <% break %>
+                    <% end %>
+                <% end %>
               </td>
+
+
               <td style="text-align:center">
                 <%= f.name %>
               </td>
@@ -27,21 +45,27 @@
               <td style="text-align:center">
                 <%= f.summary %>
               </td>
+
               <td style="text-align:center">
                 <%= f.price %>
               </td>
-              </td>
 
-              <td>
+
+              <td style="text-align:center">
                 <input type="checkbox" value="1" name="roles[]" id="roles_" class="center">
                 <label for="SuperAdmin"></label>
               </td>
 
-              <td>
 
-                <%= link_to "编辑", edit_admincaipin_path(f),class: "fa fa-pencil" %>&nbsp;
+              <td style="text-align:center">
+                <%= f.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+              </td>
+
+              <td style="text-align:center">
+
+                <%= link_to "编辑", edit_admincaipin_path(f),class: " external item-link item-content alert-text,fa fa-pencil" %>&nbsp;
                 <%= link_to '删除', admincaipin_path(f), class: "fa fa-trash", method: :delete, data: { confirm: 'Are you sure?' } %>
-
+</td>
             </tr>
         <% end %>
         </tbody>

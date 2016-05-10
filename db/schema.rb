@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160506031538) do
   end
 
   create_table "caipins", force: :cascade do |t|
-    t.integer  "caipingcla_id",          limit: 4
+    t.integer  "caipincla_id",           limit: 4
     t.string   "name",                   limit: 255
     t.string   "summary",                limit: 255
     t.float    "price",                  limit: 24
