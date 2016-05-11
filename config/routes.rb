@@ -3,9 +3,17 @@ Rails.application.routes.draw do
   resources :abouts
   resources :adminabouts
   resources :introductions
+
   resources :caipinclas
   resources :caipins
   resources :admincaipins
+
+  resources :themeclas
+  resources :themes
+  resources :adminthemes
+
+
+
 
 
 

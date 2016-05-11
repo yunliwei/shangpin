@@ -1,9 +1,9 @@
-class AdmincaipinsController < ApplicationController
-  before_action :set_caipin, only: [:show, :edit, :update, :destroy]
+class AdminthemesController < ApplicationController
+  before_action :set_theme, only: [:show, :edit, :update, :destroy]
   def index
 
-    @caipins = Caipin.all
-    @caipinclas = Caipincla.all
+    @themes = Theme.all
+    @themeclas = Themecla.all
 
   end
 
