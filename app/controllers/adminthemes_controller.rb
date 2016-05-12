@@ -12,18 +12,20 @@ class AdminthemesController < ApplicationController
 
 
   def show
-    @caipintype = Caipincla.all
+    @themetype = Themecla.all
   end
 
   # GET /tests/new
   def new
-    @admincaipin = Caipin.new
-    @caipintype = Caipincla.all
+    @admintheme = Theme.new
+    @themetype = Themecla.all
+
   end
 
   # GET /tests/1/edit
   def edit
-    @caipintype = Caipincla.all
+    @themetype = Themecla.all
+
   end
 
 
@@ -31,15 +33,15 @@ class AdminthemesController < ApplicationController
   # POST /tests
   # POST /tests.json
   def create
-    @admincaipin = Caipin.new(caipin_params)
+    @admintheme= Theme.new(theme_params)
 
     respond_to do |format|
-      if @admincaipin.save
-        format.html { redirect_to caipins_path, notice: 'Test was successfully created.' }
-        format.json { render :show, status: :created, location: @caipin }
+      if @admintheme.save
+        format.html { redirect_to themes_path, notice: 'Test was successfully created.' }
+        format.json { render :show, status: :created, location: @theme}
       else
         format.html { render :new }
-        format.json { render json: @caipin.errors, status: :unprocessable_entity }
+        format.json { render json: @theme.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,12 +50,12 @@ class AdminthemesController < ApplicationController
   # PATCH/PUT /tests/1.json
   def update
     respond_to do |format|
-      if @caipin.update(caipinq_params)
-        format.html { redirect_to @caipin, notice: 'Test was successfully updated.' }
-        format.json { render :show, status: :ok, location: @caipin }
+      if @theme.update(caipinq_params)
+        format.html { redirect_to @theme, notice: 'Test was successfully updated.' }
+        format.json { render :show, status: :ok, location: @theme }
       else
         format.html { render :edit }
-        format.json { render json: @caipin.errors, status: :unprocessable_entity }
+        format.json { render json: @theme.errors, status: :unprocessable_entity }
       end
     end
 
@@ -62,9 +64,9 @@ class AdminthemesController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
-    @admincaipin.destroy
+    @admintheme.destroy
     respond_to do |format|
-      format.html { redirect_to admincaipins_path, notice: '记录已经删除!' }
+      format.html { redirect_to adminthemes_path, notice: '记录已经删除!' }
       format.json { head :no_content }
     end
   end
@@ -75,12 +77,12 @@ class AdminthemesController < ApplicationController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_caipin
-    @admincaipin = Caipin.find(params[:id])
+  def set_theme
+    @admintheme = Theme.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def caipin_params
-    params.require(:caipin).permit(:caipincla_id,:name,:summary,:price)
+  def theme_params
+    params.require(:theme).permit(:themecla_id,:title,:img)
   end
 end

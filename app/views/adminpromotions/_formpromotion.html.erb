@@ -1,0 +1,80 @@
+<div class="container">
+  <h1>近期活动</h1>
+</div>
+<script type="text/javascript" language="JavaScript">
+
+    function get_promotion(){
+        document.getElementById("hidden_promotion").value=document.getElementById("select_promotion").value;
+    }
+
+    $(document).ready(function () {
+
+
+        var a = document.getElementById("select_promotion");
+        a.options[0].selected = true;
+        document.getElementById("hidden_promotion").value=document.getElementById("select_promotion").value;
+
+
+
+    });
+
+
+
+</script>
+<%= form_for(@adminpromotion, :html => {:class=>'form-horizontal m-t',id:"signupForm",:multipart => true}) do |f| %>
+
+
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">活动标题：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :title ,class:"form-control"%>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">活动内容：</label>
+      <div class="col-sm-5">
+        <%= f.text_area :content,class:"form-control"%>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">开始时间：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :startdate ,id:"price",class:"form-control"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">结束时间：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :enddate ,id:"price",class:"form-control"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label">显示时间：</label>
+      <div class="col-sm-5">
+        <%= f.text_field :showdate ,id:"price",class:"form-control"%>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  <br>
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-3">
+        <%= f.submit '提交',class:"button button-glow button-rounded button-raised button-primary pull-right" %>
+      </div>
+    </div>
+    </div>
+<% end %>

@@ -12,6 +12,15 @@ Rails.application.routes.draw do
   resources :themes
   resources :adminthemes
 
+  resources :promotions
+  resources :adminpromotions
+  resources :enrolls
+
+  resources :adminenrolls
+
+
+
+
 
 
 

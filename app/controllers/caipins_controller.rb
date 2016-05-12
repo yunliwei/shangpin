@@ -2,7 +2,8 @@ class CaipinsController < ApplicationController
   before_action :set_admincaipin, only: [:show, :edit, :update, :destroy]
   def index
 
-
+@caipins = Caipin.all
+    @caipinclas = Caipincla.all
 
   end
 
@@ -76,7 +77,7 @@ class CaipinsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admincaipin_params
-    params.require(:caipin).permit(:productcla_id,:name,:summary, :price)
+    params.require(:caipin).permit(:caipincla_id,:name,:summary, :price,:caipinimg)
   end
 end
 

@@ -1,0 +1,2 @@
+class AdminenrollsController < ApplicationController
+end
