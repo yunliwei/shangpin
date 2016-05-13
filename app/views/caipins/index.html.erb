@@ -5,11 +5,21 @@
     <div class="page-content">
 
       <div class="navbarpages">
-        <div class="navbar_home_link"><a href="index.html"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
+
+
+
+
+        <%= link_to image_tag('icons/white/home.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
+
+
+
         <div class="navbar_page_center">特色菜品</div>
 
-        <%= link_to image_tag('menu_open.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
-        <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+
+
+
+
+
       </div>
       <div id="pages_maincontent">
 
@@ -22,7 +32,7 @@
                 <% @caipins.each do |caipin| %>
                     <% if caipincla.id == caipin.caipincla_id %>
                         <li>
-                          <%= caipin.price %>
+                          <%= caipin.caipinimg %>
                         </li>
                     <% end %>
                 <% end %>

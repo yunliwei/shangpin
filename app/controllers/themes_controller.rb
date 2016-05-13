@@ -1,7 +1,8 @@
 class ThemesController < ApplicationController
   before_action :set_admintheme, only: [:show, :edit, :update, :destroy]
   def index
-
+    @themes = Theme.all
+    @themeclas = Themecla.all
 
 
   end
@@ -20,6 +21,7 @@ class ThemesController < ApplicationController
 
   # GET /tests/1/edit
   def edit
+
   end
 
 
@@ -54,6 +56,9 @@ class ThemesController < ApplicationController
     end
   end
 
+
+
+
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
@@ -76,7 +81,7 @@ class ThemesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admintheme_params
-    params.require(:theme).permit(:themecla_id,:title,:img)
+    params.require(:theme).permit(:themecla_id,:title,:themeimg)
   end
 end
 

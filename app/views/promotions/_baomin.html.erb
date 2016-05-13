@@ -1,11 +1,11 @@
 <div class="pages">
   <div data-page="projects" class="page no-toolbar no-navbar">
     <div class="page-content">
-
       <div class="navbarpages">
         <div class="navbar_home_link"><a href="index.html"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
         <div class="navbar_page_center">现在报名</div>
-        <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
+        <%= link_to image_tag('menu_open.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
+
       </div>
       <div id="pages_maincontent">
 
@@ -19,6 +19,7 @@
             <label>姓名</label>
             <input type="text" name="ContactEmail" id="ContactEmail" value="" class="form_input required email" />
             <label>电话</label>
+
             <textarea name="ContactComment" id="ContactComment" class="form_textarea textarea required" rows="" cols=""></textarea>
             <input type="submit" name="submit" class="form_submit" id="submit" value="Send" />
             <input class="" type="hidden" name="to"  value="youremail@yourwebsite.com" />

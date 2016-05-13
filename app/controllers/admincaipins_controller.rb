@@ -81,6 +81,6 @@ class AdmincaipinsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def caipin_params
-    params.require(:caipin).permit(:caipincla_id,:name,:summary,:price,:img)
+    params.require(:caipin).permit(:caipincla_id,:name,:summary,:price,:caipinimg)
   end
 end

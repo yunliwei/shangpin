@@ -32,13 +32,6 @@
         <%= f.text_field :title ,class:"form-control"%>
       </div>
     </div>
-    <div class="form-group">
-      <label class="col-sm-3 control-label">活动内容：</label>
-      <div class="col-sm-5">
-        <%= f.text_area :content,class:"form-control"%>
-      </div>
-    </div>
-
 
     <div class="form-group">
       <label class="col-sm-3 control-label">开始时间：</label>
@@ -61,7 +54,12 @@
       </div>
     </div>
 
-
+    <div class="form-group">
+      <label class="col-sm-3 control-label">活动内容：</label>
+      <div class="col-sm-5">
+        <%= f.kindeditor :content, :simple_mode => true,:owner_id => @adminpromotion.id,height:400 %>
+      </div>
+    </div>
 
 
 
