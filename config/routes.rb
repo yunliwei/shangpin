@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :adminenrolls
 
+  resources :admins
+  resources :logins
+
+
 
 
 
