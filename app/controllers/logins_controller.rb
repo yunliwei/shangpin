@@ -2,7 +2,7 @@ class LoginsController < ApplicationController
   def index
     admin= Admin.all
     if admin.count==0
-      Admin.create(user_name:'admin',password:'admin',password_confirmation:'admin')
+      Admin.create(use_name:'admin',password:'admin',password_confirmation:'admin')
     end
   end
 
@@ -11,7 +11,7 @@ class LoginsController < ApplicationController
   def create
 
 
-    admin = Admin.find_by(user_name:params[:login][:user_name])
+    admin = Admin.find_by(use_name:params[:login][:use_name])
     if admin && admin.authenticate(params[:login][:password])
 
       redirect_to admins_path
