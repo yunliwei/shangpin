@@ -1,26 +1,17 @@
 <div class="pages">
   <div data-page="projects" class="page no-toolbar no-navbar">
     <div class="page-content">
-
       <div class="navbarpages">
-        <div class="navbar_home_link"><a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a></div>
         <div class="navbar_page_center">关于我们</div>
         <div class="menu_open_icon_white">
-
           <%= link_to image_tag('menu_open.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
         </div>
       </div>
       <div id="pages_maincontent">
-
-
-
-
         <% if @about %>
-            <%= @about.content.html_safe %>
+         <%= @about.content.html_safe %>
         <% end %>
       </div>
-
-
     </div>
   </div>
 </div>

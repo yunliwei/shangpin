@@ -1,47 +1,48 @@
 
-
 <div class="pages">
   <div data-page="projects" class="page no-toolbar no-navbar">
     <div class="page-content">
-
       <div class="navbarpages">
-        <div class="navbar_home_link external item-link item-content alert-text"><a href="/tests"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
         <div class="navbar_page_center">主题活动</div>
-        <%= link_to image_tag('icons/white/home.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
+        <div class="menu_open_icon_white">
 
+          <%= link_to image_tag('menu_open.png') ,'/tests',class:"external item-link item-content alert-text",'data-no-turbolink' => true %>
+        </div>
       </div>
       <div id="pages_maincontent">
+        <h2 class="page_subtitle">婚礼
+        <% @themeclas.each do |themecla| %>
+            <%= themecla.name %>
+            <% @themes.each do |theme| %>
+                <% if themecla.id == theme.themecla_id %>
+
+                      </h2>
+                    <li>
+                      <%= theme.title %>
+
+                    </li>
+
+                    <li>
+                      <%= link_to theme.themeimg %>
+
+                    </li>
+
+                <% end %>
+            <% end %>
+        <% end %>
 
 
 
-        <h2 class="page_subtitle">婚礼</h2>
+
         <div class="list-block">
           <ul class="posts">
             <li class="swipeout">
               <div class="swipeout-content item-content">
                 <div class="post_entry">
-
-
-
                   <div class="center"><img src="images/photos/photo8.jpg" alt="" title="" /></div>
-                  <div class="post_details">
-                    <h2><a href="blog-single.html"></a></h2>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <span class="post_date">24.02.2015</span>
-                    <span class="post_author">by <a href="#">查看更多</a></span>
-
-                  </div>
-
-
-
-
-
-
 
                 </div>
               </div>
-
-
               <div class="swipeout-actions-right">
                 <a href="#" class="action1 open-popup" data-popup=".popup-social"><img src="images/icons/white/heart.png" alt="" title="" /></a>
               </div>
