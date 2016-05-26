@@ -1,27 +1,85 @@
 
 <hi>
-
     尚品
-
 </hi>
 <br><br>
 
 
-<table border="1">
-  <tr>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <style>
+      *{ margin:0; padding:0; list-style:none;}
+      body{ font-size:12px; color:#666; text-align:left;}
+      h1{ text-align:center;}
+
+      .lanrenzhijia{ width:875px; height:85px; margin:40px auto; background:#f0f0f0; font-family:'微软雅黑';}
+      .lanrenzhijia .tab{ overflow:hidden; background:#ccc;}
+      .lanrenzhijia .tab a{ display:block; padding:10px 3.5px; float:left; text-decoration:none; color:#333;}
+      .lanrenzhijia .tab a:hover{ background:#E64E3F; color:#fff; text-decoration:none;}
+      .lanrenzhijia .tab a.on{ background:#E64E3F; color:#fff; text-decoration:none;}
+      .lanrenzhijia .content{ overflow:hidden; padding:10px;}
+      .lanrenzhijia .content li{ display:none;}
+  </style>
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div class="lanrenzhijia">
+  <div class="tab">
+
+   <a href="/admins" class="swiper_read_more external item-link item-content alert-text javascript:;">管理员</a>
+    <a href="/adminabouts" class="swiper_read_more external item-link item-content alert-text javascript:;">关于尚品</a>
+    <a href="/introductions/1/edit" class="swiper_read_more external item-link item-content alert-text javascript:;">环境与内设</a>
+    <a href="/caipinclas" class="swiper_read_more external item-link item-content alert-text javascript:;">菜品类型</a>
+    <a href="/admincaipins" class="swiper_read_more external item-link item-content alert-text javascript:;">菜品设置</a>
+    <a href="/themeclas" class="swiper_read_more external item-link item-content alert-text javascript:;">主题类型</a>
+    <a href="/adminthemes" class="swiper_read_more external item-link item-content alert-text javascript:;">主题设置</a>
+    <a href="/adminpromotions" class="swiper_read_more external item-link item-content alert-text javascript:;">近期活动</a>
+    <a href="/enrolls" class="swiper_read_more external item-link item-content alert-text javascript:;">报名情况</a>
+  </div>
+
+
+</div>
 
 
 
-    <td><a href="/admins" class="swiper_read_more external item-link item-content alert-text">管理员</a>
-    <td><a href="/adminabouts" class="swiper_read_more external item-link item-content alert-text">关于尚品</a></td>
-    <td><a href="/introductions/1/edit" class="swiper_read_more external item-link item-content alert-text">环境与内设</a></td>
-    <td><a href="/caipinclas" class="swiper_read_more external item-link item-content alert-text">菜品类型</a></td>
-    <td><a href="/admincaipins" class="swiper_read_more external item-link item-content alert-text">菜品</a></td>
-    <td><a href="/themeclas" class="swiper_read_more external item-link item-content alert-text">主题类型</a></td>
-    <td><a href="/adminthemes" class="swiper_read_more external item-link item-content alert-text">主题</a></td>
-    <td><a href="/adminpromotions" class="swiper_read_more external item-link item-content alert-text">近期活动</a></td>
-    <td><a href="/enrolls" class="swiper_read_more external item-link item-content alert-text">报名情况</a></td>
-  </tr>
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+<script>
+    $(function(){
+        $(".lanrenzhijia .tab a").mouseover(function(){
+            $(this).addClass('on').siblings().removeClass('on');
+            var index = $(this).index();
+            number = index;
+            $('.lanrenzhijia .content li').hide();
+            $('.lanrenzhijia .content li:eq('+index+')').show();
+        });
 
-</table>
+        var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+        if(auto ==1){
+            var number = 0;
+            var maxNumber = $('.lanrenzhijia .tab a').length;
+            function autotab(){
+                number++;
+                number == maxNumber? number = 0 : number;
+                $('.lanrenzhijia .tab a:eq('+number+')').addClass('on').siblings().removeClass('on');
+                $('.lanrenzhijia .content ul li:eq('+number+')').show().siblings().hide();
+            }
+            var tabChange = setInterval(autotab,3000);
+            //鼠标悬停暂停切换
+            $('.lanrenzhijia').mouseover(function(){
+                clearInterval(tabChange);
+            });
+            $('.lanrenzhijia').mouseout(function(){
+                tabChange = setInterval(autotab,3000);
+            });
+        }
+    });
+</script>
+<!-- 代码部分end -->
 
+</body>
+</html>

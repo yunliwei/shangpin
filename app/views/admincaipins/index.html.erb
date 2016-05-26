@@ -1,18 +1,15 @@
 <%= render 'adminmenu'%>
 <div class="container">
   <h1>特色菜品</h1>
-
     <div class="ibox-content">
-
       <table border="1">
         <thead>
         <tr>
           <th style="text-align:center">菜品类型</th>&nbsp;
-          <th style="text-align:center">菜品名称</th>
-          <th style="text-align:center">菜品描述</th>
-          <th style="text-align:center">菜品价格</th>
-          <th style="text-align:center">显示主页</th>
-          <th style="text-align:center">创建时间</th>
+          <th style="text-align:center">菜品名称</th>&nbsp;
+          <th style="text-align:center">菜品描述</th>&nbsp;
+          <th style="text-align:center">菜品价格</th>&nbsp;
+          <th style="text-align:center">创建时间</th>&nbsp;
           <th style="text-align:center">操作</th>
         </tr>
         </thead>
@@ -30,7 +27,7 @@
                     <% end %>
                 <% end %>
               </td>
-
+              &nbsp;&nbsp;&nbsp;
 
               <td style="text-align:center">
                 <%= f.name %>
@@ -45,10 +42,7 @@
               </td>
 
 
-              <td style="text-align:center">
-                <input type="checkbox" value="1" name="roles[]" id="roles_" class="center">
-                <label for="SuperAdmin"></label>
-              </td>
+
 
 
               <td style="text-align:center">
