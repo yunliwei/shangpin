@@ -2,7 +2,7 @@ class CaipinsController < ApplicationController
   before_action :set_admincaipin, only: [:show, :edit, :update, :destroy]
   def index
 
-@caipins = Caipin.all
+    @caipins = Caipin.all
     @caipinclas = Caipincla.all
 
   end
