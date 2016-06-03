@@ -17,7 +17,7 @@
                 <% @caipins.each do |caipin| %>
                     <% if caipincla.id == caipin.caipincla_id %>
                         <li>
-                          <%= link_to caipin.caipinimg.html_safe %>
+                          <%= link_to caipin.caipinimg %>
                         </li>
                     <% end %>
                 <% end %>
