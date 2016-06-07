@@ -14,11 +14,7 @@
         <h2 id="Note"></h2>
         <div class="contactform">
 
-
-
-
-
-
+         
 
 
 
@@ -26,31 +22,36 @@
 
           <form class="cmxform" id="ContactForm" method="post" action="">
 
-
+            <%= form_for @enroll do |f| %>
 
             <label>姓名:</label>
+                <%= f.text_field :name,class:"" %>
 
-            <input type="text" name="ContactName" id="ContactName" value="" class="form_input required" />
+                <input type="text" name="ContactName" id="ContactName" value="" class="form_input required" />
+
 
 
 
             <label>电话:</label>
-
+            <%= f.text_field :tel %>
             <input type="text" name="ContactEmail" id="ContactEmail" value="" class="form_input required email" />
 
 
 
             <label>内容:</label>
-
+            <%= f.text_area :content %>
             <textarea name="ContactComment" id="ContactComment" class="form_textarea textarea required" rows="" cols=""></textarea>
 
 <br>
             <br>
+
+
+
             <input type="submit" name="submit" class="button button-glow button-rounded button-raised button-primary" id="submit" value="提交" />
 
 
 
-
+<% end %>
 
           </form>
 

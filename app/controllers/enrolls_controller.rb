@@ -6,7 +6,7 @@ class EnrollsController < ApplicationController
   # GET /tests.json
   def index
     @enrolls = Enroll.all
-
+    @enroll = Enroll.new
   end
 
   # GET /tests/1
